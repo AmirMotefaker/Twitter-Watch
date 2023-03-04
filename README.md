@@ -49,3 +49,14 @@ To submit send an email to **competition@310.ai** before **March 11th**. The ema
 - a link to your API endpoint.
 - a link to you source code.
 - a link to the website if have made it for the extra score
+
+    
+### Extra Score
+
+- Figure out a sentiment metric that measures how positive or negative each account is.
+- Use AI to come up with a two paragraph summary description of the account.
+- Make a website that presents the data extracted in a simple and clean way.
+
+### Followup & Questions in Discord
+
+[https://discord.gg/2Kf9h9JA](https://discord.gg/2Kf9h9JA)
