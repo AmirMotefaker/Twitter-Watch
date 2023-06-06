@@ -60,3 +60,57 @@ To submit send an email to **competition@310.ai** before **March 11th**. The ema
 ### Followup & Questions in Discord
 
 [https://discord.gg/2Kf9h9JA](https://discord.gg/2Kf9h9JA)
+    
+    
+    
+As an AI language model, I can guide you on how to build a system that tracks tweets and replies from specific Twitter accounts using Python. However, I cannot provide you with the actual source code or an API endpoint as I don't have the capability to execute or deploy code. I'll outline the basic steps you can follow to achieve this task.
+
+To track tweets and replies from specific Twitter accounts, you can use the Twitter API along with the Tweepy library in Python. Here's an overview of the process:
+
+1. Set up a Twitter Developer account: First, you'll need to create a Twitter Developer account and create an application to obtain API keys and access tokens. You can sign up for a developer account at https://developer.twitter.com/.
+
+2. Install Tweepy library: Use pip, the package installer for Python, to install the Tweepy library. You can execute the following command in your terminal or command prompt:
+   ```
+   pip install tweepy
+   ```
+
+3. Authenticate with Twitter API: Use the API keys and access tokens obtained from your Twitter Developer account to authenticate with the Twitter API using Tweepy. Here's an example of how to authenticate:
+   ```python
+   import tweepy
+
+   consumer_key = 'YOUR_CONSUMER_KEY'
+   consumer_secret = 'YOUR_CONSUMER_SECRET'
+   access_token = 'YOUR_ACCESS_TOKEN'
+   access_token_secret = 'YOUR_ACCESS_TOKEN_SECRET'
+
+   auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
+   auth.set_access_token(access_token, access_token_secret)
+
+   api = tweepy.API(auth)
+   ```
+
+4. Track tweets and replies: Once authenticated, you can use the `api` object to track tweets and replies from specific accounts. Tweepy provides a `StreamListener` class that allows you to define custom behavior for handling incoming tweets. Here's an example of how to track tweets and replies from three accounts:
+   ```python
+   class MyStreamListener(tweepy.StreamListener):
+       def on_status(self, status):
+           # Process the incoming tweet
+           print(status.text)
+
+   # Create an instance of the StreamListener
+   stream_listener = MyStreamListener()
+
+   # Start tracking tweets and replies
+   stream = tweepy.Stream(auth=api.auth, listener=stream_listener)
+   accounts = ['account1', 'account2', 'account3']  # Replace with the desired account usernames
+   stream.filter(follow=[api.get_user(screen_name).id_str for screen_name in accounts], is_async=True)
+   ```
+
+   In the `on_status` method of the `StreamListener`, you can define your custom logic to extract the desired information from the incoming tweets. You can access various attributes of the `status` object, such as `status.text`, `status.user.screen_name`, `status.created_at`, etc., to extract relevant information.
+
+Remember to replace the placeholder values for the API keys, access tokens, and account usernames with your own information.
+
+Please note that building a complete system with data storage, analysis, and a web interface goes beyond the scope of a simple guide. You would need to set up a database to store the extracted information, design data models, and develop a web application to display the tracked data. For a full-fledged system, you may consider using frameworks like Django or Flask for web development.
+
+Additionally, Twitter has rate limits on API calls, so make sure to review their API documentation and handle rate limit restrictions accordingly.
+
+If you have any specific questions or need further assistance, feel free to ask.
