@@ -62,8 +62,7 @@ To submit send an email to **competition@310.ai** before **March 11th**. The ema
 [https://discord.gg/2Kf9h9JA](https://discord.gg/2Kf9h9JA)
     
     
-    
-As an AI language model, I can guide you on how to build a system that tracks tweets and replies from specific Twitter accounts using Python. However, I cannot provide you with the actual source code or an API endpoint as I don't have the capability to execute or deploy code. I'll outline the basic steps you can follow to achieve this task.
+    ---------------------------------------------------------------------------------------------
 
 To track tweets and replies from specific Twitter accounts, you can use the Twitter API along with the Tweepy library in Python. Here's an overview of the process:
 
