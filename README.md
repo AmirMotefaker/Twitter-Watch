@@ -111,5 +111,3 @@ Remember to replace the placeholder values for the API keys, access tokens, and 
 Please note that building a complete system with data storage, analysis, and a web interface goes beyond the scope of a simple guide. You would need to set up a database to store the extracted information, design data models, and develop a web application to display the tracked data. For a full-fledged system, you may consider using frameworks like Django or Flask for web development.
 
 Additionally, Twitter has rate limits on API calls, so make sure to review their API documentation and handle rate limit restrictions accordingly.
-
-If you have any specific questions or need further assistance, feel free to ask.
